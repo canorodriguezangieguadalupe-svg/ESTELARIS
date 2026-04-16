@@ -2,45 +2,277 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Promociones</title>
-<link rel="stylesheet" href="estilos.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promociones Estelaris</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:linear-gradient(#ecfff5,#d9fbe9);color:#244d3b;}
+
+/* HEADER ORIGINAL */
+header{
+position:fixed;width:100%;top:0;
+display:flex;justify-content:space-between;align-items:center;
+padding:35px 30px;height:100px;
+background:url('Fondo.jpeg') center/cover;
+z-index:1000;
+}
+
+.logo{
+font-family:'Dancing Script';
+font-size:70px;
+color:white;
+}
+
+.nav a{
+margin:0 12px;
+padding:14px 28px;
+border-radius:30px;
+background:rgba(255,255,255,0.2);
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.4s;
+}
+.nav a:hover{
+background:white;
+color:#1f7a5c;
+transform:scale(1.1);
+}
+
+/* TITULO */
+.titulo{
+margin-top:140px;
+text-align:center;
+font-size:55px;
+color:#1f7a5c;
+}
+
+/* GRID */
+.promos{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+padding:40px;
+max-width:1000px;
+margin:auto;
+}
+
+/* TARJETAS */
+.promo{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+position:relative;
+transition:0.4s;
+overflow:hidden;
+}
+.promo:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+/* IMAGEN */
+.promo img{
+width:100%;
+border-radius:15px;
+}
+
+/* TEXTOS */
+.promo h3{margin:10px 0;color:#1f7a5c;}
+
+.precio{
+font-size:18px;
+text-decoration:line-through;
+color:#888;
+}
+
+.descuento{
+font-size:24px;
+color:#1f7a5c;
+font-weight:bold;
+}
+
+/* TEXTO EXTRA */
+.extra{
+color:#1f7a5c;
+font-weight:bold;
+margin-top:5px;
+animation:pulse 1.5s infinite;
+}
+
+.extra2{
+font-size:14px;
+color:#555;
+margin-bottom:10px;
+}
+
+/* ETIQUETA */
+.tag{
+position:absolute;
+top:15px;
+left:15px;
+background:#1f7a5c;
+color:white;
+padding:6px 12px;
+border-radius:10px;
+font-size:14px;
+font-weight:bold;
+animation:brillo 2s infinite;
+}
+
+/* BOTON */
+.btn{
+margin-top:10px;
+padding:12px 25px;
+background:#1f7a5c;
+color:white;
+border:none;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+}
+.btn:hover{
+background:#145c43;
+transform:scale(1.05);
+}
+
+/* ANIMACIONES */
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+@keyframes brillo{
+0%{opacity:1;}
+50%{opacity:0.6;}
+100%{opacity:1;}
+}
+
+/* SCROLL */
+.reveal{opacity:0;transform:translateY(60px);transition:1s;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+footer{
+background:#1f7a5c;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+@media(max-width:768px){
+.promos{grid-template-columns:1fr;}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-<h1>Promociones</h1>
-</header>
-
-<nav>
+<div class="logo">Estelaris</div>
+<div class="nav">
 <a href="index.html">Inicio</a>
 <a href="productos.html">Productos</a>
 <a href="promociones.html">Promociones</a>
 <a href="contacto.html">Contacto</a>
-</nav>
+</div>
+</header>
 
-<section class="promo">
+<h1 class="titulo">🔥 Promociones Especiales</h1>
 
-<div class="promo-box">
-<h2>🎁 20% de descuento</h2>
-<p>Compra dos cremas y recibe 20% de descuento.</p>
+<section class="promos">
+
+<!-- 1 -->
+<div class="promo reveal">
+<div class="tag">-20%</div>
+<img src="5.jpeg">
+<h3>Crema 250ml</h3>
+<p class="precio">$199</p>
+<p class="descuento">$159 MXN</p>
+<p class="extra">🔥 Compra 2 y llévate 1 GRATIS</p>
+<p class="extra2">Resultados visibles en semanas. Oferta limitada.</p>
+<button class="btn">Comprar</button>
 </div>
 
-<div class="promo-box">
-<h2>🚚 Envío gratis</h2>
-<p>En compras mayores a $500.</p>
+<!-- 2 -->
+<div class="promo reveal">
+<div class="tag">-30%</div>
+<img src="6.jpeg">
+<h3>Aceite Anticelulitis</h3>
+<p class="precio">$179</p>
+<p class="descuento">$125 MXN</p>
+<p class="extra">💸 Ahorra hasta $50 en tu compra</p>
+<p class="extra2">Ideal para masajes y mejores resultados.</p>
+<button class="btn">Comprar</button>
 </div>
 
-<div class="promo-box">
-<h2>✨ Kit especial</h2>
-<p>Paquete de 3 cremas por solo $499.</p>
+<!-- 3 -->
+<div class="promo reveal">
+<div class="tag">KIT</div>
+<img src="14.jpeg">
+<h3>Kit Completo</h3>
+<p class="precio">$399</p>
+<p class="descuento">$299 MXN</p>
+<p class="extra">📦 Todo en un solo paquete</p>
+<p class="extra2">Maximiza resultados con el tratamiento completo.</p>
+<button class="btn">Comprar</button>
+</div>
+
+<!-- 4 -->
+<div class="promo reveal">
+<div class="tag">2x1</div>
+<img src="13.jpeg">
+<h3>Gel + Jabón</h3>
+<p class="precio">$258</p>
+<p class="descuento">$159 MXN</p>
+<p class="extra">💥 Paga 1 y recibe 2</p>
+<p class="extra2">Perfecto para rutina diaria.</p>
+<button class="btn">Comprar</button>
+</div>
+
+<!-- 5 -->
+<div class="promo reveal">
+<div class="tag">-25%</div>
+<img src="7.jpeg">
+<h3>Crema 500ml</h3>
+<p class="precio">$299</p>
+<p class="descuento">$224 MXN</p>
+<p class="extra">🔥 Más producto, más ahorro</p>
+<p class="extra2">Ideal para uso constante y resultados prolongados.</p>
+<button class="btn">Comprar</button>
+</div>
+
+<!-- 6 -->
+<div class="promo reveal">
+<div class="tag">COMBO</div>
+<img src="15.jpeg">
+<h3>Masajeador + Aceite</h3>
+<p class="precio">$308</p>
+<p class="descuento">$239 MXN</p>
+<p class="extra">💆 Mejora resultados desde la primera semana</p>
+<p class="extra2">Activa la circulación y potencia el efecto del producto.</p>
+<button class="btn">Comprar</button>
 </div>
 
 </section>
 
 <footer>
-<p>© 2026 Estelaris Beauty</p>
+<p>Estelaris Beauty © 2026</p>
 </footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+document.querySelectorAll('.reveal').forEach(el=>{
+let top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add('active');
+}
+});
+});
+</script>
 
 </body>
 </html>

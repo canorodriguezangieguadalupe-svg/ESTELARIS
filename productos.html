@@ -2,54 +2,242 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Productos Estelaris</title>
-<link rel="stylesheet" href="estilos.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda Estelaris</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(#ecfff5,#d9fbe9);color:#244d3b;}
+
+/* HEADER ORIGINAL */
+header{
+position:fixed;width:100%;top:0;
+display:flex;justify-content:space-between;align-items:center;
+padding:35px 30px;height:100px;
+background:url('Fondo.jpeg') center/cover;
+z-index:1000;
+}
+
+.logo{
+font-family:'Dancing Script';
+font-size:70px;
+color:white;
+}
+
+.nav a{
+margin:0 12px;
+padding:14px 28px;
+border-radius:30px;
+background:rgba(255,255,255,0.2);
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.4s;
+}
+.nav a:hover{
+background:white;
+color:#1f7a5c;
+transform:scale(1.1);
+}
+
+/* TITULO */
+.titulo{margin-top:140px;text-align:center;font-size:55px;color:#1f7a5c;}
+
+/* PRODUCTOS 2x2 */
+.productos{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+padding:40px;
+max-width:1000px;
+margin:auto;
+}
+
+.producto{
+background:white;padding:20px;border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+.producto:hover{transform:scale(1.03);}
+
+.producto img{width:100%;border-radius:15px;}
+.producto h3{margin:10px 0;color:#1f7a5c;}
+.precio{font-weight:bold;font-size:20px;margin:5px 0;}
+.desc{font-size:15px;color:#555;margin-bottom:10px;}
+
+/* BOTONES */
+.botones{display:flex;gap:10px;}
+.btn{
+flex:1;padding:10px;border:none;border-radius:20px;
+cursor:pointer;font-size:14px;
+}
+.carrito-btn{background:#1f7a5c;color:white;}
+.comprar-btn{background:#86e3bd;color:#1f7a5c;}
+.btn:hover{opacity:0.85;}
+
+/* CARRITO */
+.carrito{
+background:#c9f2dc;
+padding:40px;
+text-align:center;
+}
+.item{margin:5px 0;}
+
+footer{
+background:#1f7a5c;color:white;text-align:center;padding:20px;
+}
+
+@media(max-width:768px){
+.productos{grid-template-columns:1fr;}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-<h1>Nuestros Productos</h1>
-</header>
-
-<nav>
+<div class="logo">Estelaris</div>
+<div class="nav">
 <a href="index.html">Inicio</a>
 <a href="productos.html">Productos</a>
 <a href="promociones.html">Promociones</a>
 <a href="contacto.html">Contacto</a>
-</nav>
+</div>
+</header>
 
-<section class="container">
+<h1 class="titulo">🛍️ Tienda Estelaris</h1>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<h3>Crema Hidratante</h3>
-<p>Hidratación profunda para todo tipo de piel.</p>
-<p class="price">$199</p>
-<button class="btn">Comprar</button>
+<section class="productos">
+
+<div class="producto">
+<img src="3.png">
+<h3>Crema 100ml</h3>
+<p class="precio">$149 MXN</p>
+<p class="desc">Ideal para comenzar el tratamiento anticelulitis.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Crema 100ml',149)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Crema 100ml',149)">Comprar</button>
+</div>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc">
-<h3>Crema Anticelulitis</h3>
-<p>Mejora la textura y firmeza de tu piel.</p>
-<p class="price">$249</p>
-<button class="btn">Comprar</button>
+<div class="producto">
+<img src="4.png">
+<h3>Crema 250ml</h3>
+<p class="precio">$199 MXN</p>
+<p class="desc">Equilibrio perfecto entre precio y duración.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Crema 250ml',199)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Crema 250ml',199)">Comprar</button>
+</div>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1620912189868-3c1c6e9f91cb">
-<h3>Crema Nutritiva</h3>
-<p>Nutrición intensa con ingredientes naturales.</p>
-<p class="price">$219</p>
-<button class="btn">Comprar</button>
+<div class="producto">
+<img src="7.jpeg">
+<h3>Crema 500ml</h3>
+<p class="precio">$299 MXN</p>
+<p class="desc">Formato grande para resultados prolongados.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Crema 500ml',299)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Crema 500ml',299)">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="8.jpeg">
+<h3>Aceite Anticelulitis</h3>
+<p class="precio">$179 MXN</p>
+<p class="desc">Perfecto para masajes y mejor absorción.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Aceite',179)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Aceite',179)">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="9.jpeg">
+<h3>Gel Anticelulitis</h3>
+<p class="precio">$159 MXN</p>
+<p class="desc">Ligero, fresco y de rápida absorción.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Gel',159)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Gel',159)">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="10.jpeg">
+<h3>Jabón Anticelulitis</h3>
+<p class="precio">$99 MXN</p>
+<p class="desc">Limpieza diaria que mejora la textura de la piel.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Jabón',99)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Jabón',99)">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="11.jpeg">
+<h3>Masajeador Corporal</h3>
+<p class="precio">$129 MXN</p>
+<p class="desc">Activa la circulación y mejora resultados.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Masajeador',129)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Masajeador',129)">Comprar</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="12.jpeg">
+<h3>Kit Completo Anticelulitis</h3>
+<p class="precio">$399 MXN</p>
+<p class="desc">Incluye crema, aceite y masajeador.</p>
+<div class="botones">
+<button class="btn carrito-btn" onclick="agregar('Kit completo',399)">Agregar</button>
+<button class="btn comprar-btn" onclick="comprar('Kit completo',399)">Comprar</button>
+</div>
 </div>
 
 </section>
 
+<section class="carrito">
+<h2>🛒 Carrito</h2>
+<div id="lista"></div>
+<h3 id="total"></h3>
+</section>
+
 <footer>
-<p>© 2026 Estelaris Beauty</p>
+<p>Estelaris Beauty © 2026</p>
 </footer>
+
+<script>
+let carrito = [];
+let total = 0;
+
+function agregar(nombre, precio){
+carrito.push({nombre, precio});
+total += precio;
+mostrar();
+}
+
+function comprar(nombre, precio){
+alert("Compra directa de: " + nombre + " - $" + precio);
+}
+
+function mostrar(){
+let lista = document.getElementById("lista");
+let totalTexto = document.getElementById("total");
+
+lista.innerHTML = "";
+
+carrito.forEach(p=>{
+lista.innerHTML += `<div class="item">${p.nombre} - $${p.precio}</div>`;
+});
+
+totalTexto.innerHTML = "Total: $" + total + " MXN";
+}
+</script>
 
 </body>
 </html>
